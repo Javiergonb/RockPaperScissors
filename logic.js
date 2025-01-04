@@ -8,7 +8,7 @@
 
 
 function generateRandomRockPaperScissors(){
-    const randomNum = Math.floor((Math.random())*3 );
+    const randomNum = Math.floor((Math.random())*3);
 
     switch(randomNum){
         case 0:
@@ -30,7 +30,7 @@ function getHumanChoice(){
     return prompt("Choose between Rock, Paper and Scissors");
 }
 
-//Rock loses against paper but wins against scissors
+
 
 
 
@@ -38,7 +38,7 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    let playRound = function (humanChoice,computerChoice){
+    let playRound = function (humanChoice,computerChoice) {
         let parsedHumanChoice = humanChoice.toLowerCase();
     
         if(parsedHumanChoice === computerChoice) {
@@ -67,6 +67,16 @@ function playGame() {
 
         playRound(humanSelection,computerSelection);
         round++
+    }
+
+    if(humanScore == computerScore) {
+        console.log("ITS A TIE")
+    }
+    else if(humanScore > computerScore) {
+        console.log("YOU WON!")
+    }
+    else{
+        console.log("YOU LOSE HAHA")
     }
 }
 
